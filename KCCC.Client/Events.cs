@@ -10,39 +10,39 @@ namespace KCCC.Client
     {
         public static class CharacterCreater
         {
-            public const string SetParent = "CharaterCreater.SetParent";
-            public const string SetSkinMix = "CharaterCreater.SetSkinMix";
-            public const string SetShapeMix = "CharaterCreater.SetShapeMix";
-            public const string SetGender = "CharaterCreater.SetGender";
-            public const string SetPedFaceFeatures = "CharaterCreater.SetPedFaceFeatures";
-            public const string SetPedEarColor = "CharaterCreater.SetPedEarColor";
-            public const string SetPedHeadOverlay = "CharaterCreater.SetPedHeadOverlay";
-            public const string SetPedHeadOverlayOpacity = "CharaterCreater.SetPedHeadOverlayOpacity";
-            public const string SetDrawableValue = "CharaterCreater.SetDrawableValue";
-            public const string SetTextureValue = "CharaterCreater.SetTextureValue";
-            public const string SetCamera = "CharaterCreater.SetCamera";
-            public const string SetDrawablePropValue = "CharaterCreater.SetDrawablePropValue";
-            public const string SetTexturePropValue = "CharaterCreater.SetTexturePropValue";
-            public const string SetHairColor = "CharaterCreater.SetHairColor";
-            public const string SetHairColor2 = "CharaterCreater.SetHairColor2";
-            public const string SetColorBeard = "CharaterCreater.SetColorBeard";
-            public const string SetEyebrowsColor = "CharaterCreater.SetEyebrowsColor";
-            public const string SetChestHairColor = "CharaterCreater.SetChestHairColor";
-            public const string SetMakeUp = "CharaterCreater.SetMakeUp";
-            public const string SetMakeUp2 = "CharaterCreater.SetMakeUp2";
-            public const string SetBlush = "CharaterCreater.SetBlush";
-            public const string SetLipstick = "CharaterCreater.SetLipstick";
+            public const string SetParent = "CharacterCreater.SetParent";
+            public const string SetSkinMix = "CharacterCreater.SetSkinMix";
+            public const string SetShapeMix = "CharacterCreater.SetShapeMix";
+            public const string SetGender = "CharacterCreater.SetGender";
+            public const string SetPedFaceFeatures = "CharacterCreater.SetPedFaceFeatures";
+            public const string SetPedEarColor = "CharacterCreater.SetPedEarColor";
+            public const string SetPedHeadOverlay = "CharacterCreater.SetPedHeadOverlay";
+            public const string SetPedHeadOverlayOpacity = "CharacterCreater.SetPedHeadOverlayOpacity";
+            public const string SetDrawableValue = "CharacterCreater.SetDrawableValue";
+            public const string SetTextureValue = "CharacterCreater.SetTextureValue";
+            public const string SetCamera = "CharacterCreater.SetCamera";
+            public const string SetDrawablePropValue = "CharacterCreater.SetDrawablePropValue";
+            public const string SetTexturePropValue = "CharacterCreater.SetTexturePropValue";
+            public const string SetHairColor = "CharacterCreater.SetHairColor";
+            public const string SetHairColor2 = "CharacterCreater.SetHairColor2";
+            public const string SetColorBeard = "CharacterCreater.SetColorBeard";
+            public const string SetEyebrowsColor = "CharacterCreater.SetEyebrowsColor";
+            public const string SetChestHairColor = "CharacterCreater.SetChestHairColor";
+            public const string SetMakeUp = "CharacterCreater.SetMakeUp";
+            public const string SetMakeUp2 = "CharacterCreater.SetMakeUp2";
+            public const string SetBlush = "CharacterCreater.SetBlush";
+            public const string SetLipstick = "CharacterCreater.SetLipstick";
 
-            public const string Camera_OnBtnClicked = "CharaterCreater.Camera_OnBtnClicked";
-            public const string MovementX = "CharaterCreater.MovementX";
-            public const string MovementY = "CharaterCreater.MovementY";
-            public const string MovementWheel = "CharaterCreater.MovementWheel";
+            public const string Camera_OnBtnClicked = "CharacterCreater.Camera_OnBtnClicked";
+            public const string MovementX = "CharacterCreater.MovementX";
+            public const string MovementY = "CharacterCreater.MovementY";
+            public const string MovementWheel = "CharacterCreater.MovementWheel";
 
-            public const string HandsUp = "CharaterCreater.HandsUp";
-            public const string Save = "CharaterCreater.Save";
+            public const string HandsUp = "CharacterCreater.HandsUp";
+            public const string Save = "CharacterCreater.Save";
 
             public const string IdentityCreate = "Identity.Create";
-            public const string TickReset = "CharaterCreater.TickReset";
+            public const string TickReset = "CharacterCreater.TickReset";
 
 
         }
