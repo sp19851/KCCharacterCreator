@@ -1,0 +1,1216 @@
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+/*input,button,textarea{font-family:inherit;}  иначе пропадает текст в пасворде*/ 
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+
+/*--------------------*/
+:root {
+    --haracter-creator__main-container--background-color: rgba(0, 0, 0, 25%);
+    --haracter-creator__main-container--color: white;
+    --menu__items-container__item--border-color: rgba(0, 0, 0, 50%);
+    --menu__items-container__item--background-color: rgba(0, 0, 0, 50%);
+    --menu__buttons-container__item--background-color: rgba(240, 233, 233, 0.966); 
+    background-color: var(--haracter-creator__main-container--background-color);
+}
+body {
+	position: relative;
+}
+
+.charater-select-maincontainer {
+   
+    position: absolute;
+    top: 45vh;
+    left: 25%;
+    width: 50%;
+    z-index: 2;
+}
+.charater-select-info-container{
+    position: absolute;
+    
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: row;
+    
+    color: white;
+}
+
+.charater-select-info {
+    /*border: 1px solid black;*/
+    margin: 10px;
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 3px;
+  
+    .charater-select-info__item {
+        text-align: center;
+        text-decoration: underline;
+        padding: 5px;
+        cursor: default;
+    }
+    
+}
+.itemSelected{
+    border: 2px solid green;
+}
+.charater-select-info-item {
+    padding: 5px;
+}
+.charater-select-info-emptyitem{
+   min-height: 250px;
+   margin-top: 120%;
+   text-align: center;
+}
+
+.charater-select-btns-container {
+    /*border: 1px solid black;*/
+    position: absolute;
+    left: 70%;
+    top: 6vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+    .charater-select-btns-item {
+        margin: 10px;
+        padding: 3px;
+        border: 1px solid black;
+        border-radius: 3px;
+        cursor: default;
+        text-align: center;
+        width: 150px;
+        height: 25px;
+        
+    }
+    .charater-select-btns-item:hover{
+        transform: scale(1.1);
+    }
+    
+}
+
+.characterCreate-main-container {
+    //position: relative;
+}
+.characterCreate-context {
+    border: 1px solid black;
+    width: 100%;
+    height: 100vh;
+}
+.top-bnts {
+    //border: 1px solid black;
+    width: 50%;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    .top-btns-btn {
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: rgba(0,0,0, 0.4) ;
+        width: 30px;
+        height: 28px;
+        margin: 10px;
+        padding: 3px;
+    }
+    .top-btns-btn:hover {
+        transform: scale(1.2);
+    }
+    .btn-icon {
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 1px;
+        color: white;
+    }
+    
+   
+}
+
+
+.top-title {
+    position: absolute;
+    top:10vh;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+
+    .top-title__text {
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+    .top-title__text2 {
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+}
+.control-btns {
+    position: absolute;
+    top:75vh;
+    left: 5%;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+    
+    width: 250px;
+    height: 150px;
+    .top-title__text2 {
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .imgs {
+        display: flex;
+        flex-direction: row;
+    }
+}
+.hand-button {
+    position: absolute;
+    top:78vh;
+    left: 20%;
+    
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.3);
+}
+.hand-button:hover {
+    transform: scale(1.1);
+}
+
+.save-button {
+    position: absolute;
+    top:85vh;
+    left: 20%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+}
+.save-button:hover {
+    transform: scale(1.1);
+}
+.menu-container {
+    position: absolute;
+    top:10vh;
+    left: 65%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.3);
+    width: 30%;
+    height: 80vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+
+
+    overflow-y: auto;
+   
+
+    hr{
+        //Сверху | справа | снизу | слева
+        margin-top: 20px ;
+	    padding: 0;
+	    height: 0;
+	    border: 3px;
+	    border-top: 1px solid #333;
+    }
+    
+    .parents{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        
+    }
+    .menu-container__title{
+        font-size: 28px;
+        padding: 5px;
+        margin: 15px;
+    }
+    .parent {
+        
+        .parent__title {
+            font-size: 20px;
+            text-align: center;
+        }
+        .parent__img {
+            width: 256px;
+            height: 256px;
+        }
+    }
+    .parent-btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5px;
+        align-items: center;
+        
+    }
+    .parent-btns__center {
+        font-size: 20px;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgba(0,0,0, 0.4);
+        width: 85%;
+        
+    }
+    
+    .parents-container__inputRange {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgba(0,0,0, 0.4);
+        width: 90%;
+        height: 25px;
+        //Сверху | справа | снизу | слева
+        //margin: 10px 25px 0 10px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    
+    input[type=range] {
+        width: 90%;
+        background: transparent;
+        -webkit-appearance: none;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 6px;
+        
+    }
+    
+    /* Special styling for WebKit/Blink */
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 18px;
+        width: 18px;
+        border-radius: 9px;
+        background: transparent;
+        background-image: url('../assets/img/counter_bg_1b.png');
+        background-position-x: center;
+        background-position-y: center;
+        cursor: pointer;
+        margin-top: -5px;
+    
+        
+    
+        /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        /* Add cool effects to your sliders! */
+    }
+    
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 90%;
+        height: 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        transition: 0.1s all ease-in-out;
+       
+    }
+
+    .face-container-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /*border: 1px solid black;*/
+        .face-item {
+            display: flex;
+            flex-direction: column;
+          
+            /*margin-left: 25px;*/
+            margin-top: 5px;
+            margin-bottom: 5px;
+            .face-item-title{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .face-container__inputRange {
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: rgba(0,0,0, 0.4);
+                width: 100%;
+                height: 25px;
+                //Сверху | справа | снизу | слева
+                //margin: 10px 25px 0 10px;
+                margin-top: 5px;
+                margin-right: 25px;
+                input[type=range] {
+                    width: 75%;
+                    background: transparent;
+                    -webkit-appearance: none;
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    margin-top: 6px;
+                    
+                }
+                
+                /* Special styling for WebKit/Blink */
+                input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 18px;
+                    width: 18px;
+                    border-radius: 9px;
+                    background: transparent;
+                    background-image: url('../assets/img/counter_bg_1b.png');
+                    background-position-x: center;
+                    background-position-y: center;
+                    cursor: pointer;
+                    margin-top: -5px;
+                
+                    
+                
+                    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                    /* Add cool effects to your sliders! */
+                }
+                
+                input[type=range]::-webkit-slider-runnable-track {
+                    width: 90%;
+                    height: 10px;
+                    border-radius: 10px;
+                    background: rgba(255, 255, 255, 0.2);
+                    transition: 0.1s all ease-in-out;
+                   
+                }
+            }
+            .color-select {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*border: 1px solid black;*/
+                margin-left: 10%;
+                margin-right: 10%;
+               
+            }
+            .color-select-item {
+                border: 1px solid black;
+                width: 32px;
+                height: 32px;
+                transform: rotate(45deg);
+                margin: 15px;
+                
+            }
+            .colorSelectItemSelected{
+                border: 4px solid white;
+            }
+            .color-select-item__green{
+                background-color:green;
+            }
+            .color-select-item__emerald{
+                background-color:darkgreen;
+            }
+            .color-select-item__lightblue{
+                background-color:lightblue;
+            }
+            .color-select-item__oceanblue{
+                background-color:mediumaquamarine;
+            }
+            .color-select-item__lightbrown{
+                background-color:peru;
+            }
+            .color-select-item__darkbrown{
+                background-color:sienna;
+            }
+            .color-select-item__darkgray{
+                background-color:darkgrey;
+            }
+            .color-select-item__lightgray{
+                background-color:lightgray;
+            }
+            .color-select-item__black{
+                background-color: black;
+            }
+           
+           
+          
+           
+            
+          
+            .face-container__inputColor{
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: rgba(0,0,0, 0.4);
+                width: 100%;
+                height: 25px;
+                //Сверху | справа | снизу | слева
+                //margin: 10px 25px 0 10px;
+                
+                margin-top: 5px;
+                margin-right: 25px;
+            }
+            
+        }
+    }
+    
+    
+    .clothes-container-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /*border: 1px solid black;*/
+        .clothes-item {
+            display: flex;
+            flex-direction: column;
+          
+            /*margin-left: 25px;*/
+            margin-top: 5px;
+            margin-bottom: 5px;
+            .clothes-item-title{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .clothes-container__inputRange {
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: rgba(0,0,0, 0.4);
+                width: 100%;
+                height: 25px;
+                //Сверху | справа | снизу | слева
+                //margin: 10px 25px 0 10px;
+                margin-top: 5px;
+                margin-right: 25px;
+                input[type=range] {
+                    width: 75%;
+                    background: transparent;
+                    -webkit-appearance: none;
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    margin-top: 6px;
+                    
+                }
+                
+                /* Special styling for WebKit/Blink */
+                input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 18px;
+                    width: 18px;
+                    border-radius: 9px;
+                    background: transparent;
+                    background-image: url('../assets/img/counter_bg_1b.png');
+                    background-position-x: center;
+                    background-position-y: center;
+                    cursor: pointer;
+                    margin-top: -5px;
+                
+                    
+                
+                    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                    /* Add cool effects to your sliders! */
+                }
+                
+                input[type=range]::-webkit-slider-runnable-track {
+                    width: 90%;
+                    height: 10px;
+                    border-radius: 10px;
+                    background: rgba(255, 255, 255, 0.2);
+                    transition: 0.1s all ease-in-out;
+                   
+                }
+            }
+        }
+    }
+
+    .color-select-item__0{
+        background-color: rgb(28, 31, 33);
+    }
+    .color-select-item__1{
+        background-color: rgb(39, 42, 44);
+    }
+    
+}
+
+
+.menu-container::-webkit-scrollbar {
+    width: 5px;    /* ширина scrollbar */
+}
+
+.menu-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0, 0.3);        /* цвет дорожки */
+}
+.menu-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0, 0.5);    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    border: 3px solid rgba(0,0,0, 0.8);  /* padding вокруг плашки */
+}
+
+
+
+
+#notification {
+    //position: relative;
+    
+}
+
+.notifications-container
+{
+    position: fixed;
+    top:40%;
+    left: 87%;
+    height: 450px;
+    width: 20%;
+    z-index: 9999;
+}
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification_item {
+    /*border: 1px red solid;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    transform: translateX(-50%);
+  	animation: ani 3s forwards;*/
+      /*background-image: url("../media/img/selection_box_bg.png");*/
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 3px solid black;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      
+      /*background-color: rgba(0, 0, 0, 0.75);
+      color:rgb(255, 196, 71);*/
+      color:white;
+      line-height: 25px;
+  
+      box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+  
+      transform: translateX(-50%);
+      animation: anim 2s forwards;
+      z-index: 9999;
+}
+
+
+@keyframes anim {
+	0% {transform: translateX(50%); opacity: 0%;}
+    80% {transform: translateX(-50%); opacity: 50%;}
+	100% {transform: translateX(-50%); opacity: 100%;}
+  }
+
+.notification_item_botton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center
+}
+
+.notification_item_title {
+    font-size: 16px;
+    margin-left: 15%;
+    text-decoration: underline;
+}
+.notification_item_text {
+ text-align:center ;
+ margin-left: 15px;
+}
+
+.notification_item_img {
+    margin-top: -4%;
+}
+
+.interractmenu_container {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    /* border: 1px solid black;
+	/*border-radius: 150px;*/
+    margin: 0px auto;
+    top: 40vh;
+    left: 60%;
+    animation: interractmenu 1.5s forwards;
+    /*background-color: antiquewhite;*/
+    .m_items {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        /*border: 1px solid black;*/
+        width: 100%;
+        height: 100%;
+        min-height: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        overflow-y: auto;
+        .m_item {
+            border: 2px solid rgb(0, 0, 0);
+            max-width: 150px;
+            padding: 3px;
+            border-radius: 4px;
+            display: flex;
+            cursor: default;
+            /*background-color: rgba(0, 0, 0, 0.4);*/
+            background: linear-gradient(to bottom right, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 5%));
+            color: white;
+            z-index: 99;
+            min-width: 250px;
+            margin: 5px;
+            justify-content: center;
+            overflow-y: auto;
+        }
+    }
+}
+.m_items::-webkit-scrollbar {
+    width: 5px;    /* ширина scrollbar */
+}
+
+.m_items::-webkit-scrollbar-track {
+    background: rgba(0,0,0, 0.3);        /* цвет дорожки */
+}
+.m_items::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0, 0.5);    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    border: 3px solid rgba(0,0,0, 0.8);  /* padding вокруг плашки */
+}
+
+.m_item:hover {
+    //transform: scale(0.85);
+    border: 4px solid blue;
+}
+
+/*raycast_container{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 40vh;
+    left: 60%;
+    .r_items{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+   .r_item {
+        margin: 10px;
+        border: 2px solid rgb(0, 0, 0);
+        color: white;
+        cursor: default;
+   }
+}*/
+ 
+.raycast_container{
+    --color-default: #cfd2da;
+    --color-hover: white;
+    font-size: 16px;
+    .eye {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        fill: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+      }
+      .title{
+        text-decoration: underline;
+        
+        color: var(--color-hover);
+        cursor: default;
+      }
+     #options-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+       
+        .menuitem{
+            border: 2px solid rgb(0, 0, 0);
+            max-width: 150px;
+            padding: 3px;
+            border-radius: 4px;
+            display: flex;
+            cursor: default;
+            /*background-color: rgba(0, 0, 0, 0.4);*/
+            background: linear-gradient(to bottom right, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 5%));
+            color: white;
+           
+            min-width: 250px;
+            margin: 5px;
+            justify-content: center;
+        }
+     }
+    
+}
+.item-conatiner:hover {
+    border: 4px solid blue;
+}
+.eye_hover {
+    //fill: var(--color-hover);
+    fill: white;
+  }
+ .title:hover{
+    
+    font-size: 18px;
+    
+  }
+@keyframes interractmenu {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.progress_bar {
+    position: absolute;
+    margin: 0px auto;
+    top: 90vh;
+    left: 35%;
+    width: 45%;
+    .progress-action {
+        -webkit-appearance: none;
+        appearance: none;
+        position: relative;
+        width: 45%;
+        height: 7px;
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+}
+
+
+
+.progress-action::-webkit-progress-value {
+    //background-color: var(--progressaction-color);
+    background-color: white;
+}
+
+.progress-action::-webkit-progress-bar {
+    //background-color: var(--body-background-border-color);
+    background: linear-gradient(to bottom left, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 35%));
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+#inventory {
+    /*position: relative;*/
+    
+}
+.submenu {
+	/*background-color: black;
+	display: none;*/
+    
+    background-color: rgba(0, 0, 0, 0.6);
+	border: 1px solid black;/*rgba(17, 16, 16, 0.9);*/
+	border-radius: 10px;
+    z-index: 999;
+    .submenu li {
+        color: white;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid black0;
+        cursor: default;
+    }
+}
+
+.submenu li:hover {
+	/*text-decoration: underline;
+    font-size: 12px;*/
+    border: 1px solid red;
+}
+
+.inventory-main-container {
+    position: absolute;
+    top: 5vh;
+    left: 10%;
+    /*border: 1px solid black;*/
+    color: white;
+    
+    .main-container {
+        /*border: 1px solid black;*/
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 3px;
+        width: 430px;
+        height: 500px;
+        .title-container{
+            text-transform: uppercase;
+            margin: 3px;
+            padding: 3px;
+        }
+        .data-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .item-container {
+                width: 72px;
+                height: 72px;
+                border-radius: 3px;
+                margin: 5px;
+                padding: 5px;
+                background-color: rgba(0, 0, 0, 0.25);
+                cursor: default;
+            }
+            .item-container__empty{
+                width: 72px;
+                height: 72px;
+                border-radius: 3px;
+                margin: 5px;
+                padding: 5px;
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+        }
+        
+    }
+    
+    
+    
+}
+.ground-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 60vh;
+    left: 10%;
+    width: 430px;
+    height: 200px;
+    border-radius: 3px;
+    color: white;
+    .ground-container-title {
+        text-transform: uppercase;
+        margin: 3px;
+        padding: 3px;
+        
+    }
+    .data-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .item-container {
+            width: 72px;
+            height: 72px;
+            border-radius: 3px;
+            margin: 5px;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.25);
+            cursor: default;
+        }
+        .item-container__empty{
+            width: 72px;
+            height: 72px;
+            border-radius: 3px;
+            margin: 5px;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+.inventory-second-container{
+    position: absolute;
+    top: 5vh;
+    left: 55%;
+    /*border: 1px solid black;*/
+    color: white;
+    .main-container {
+        /*border: 1px solid black;*/
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 3px;
+        width: 430px;
+        height: 500px;
+        .title-container{
+            text-transform: uppercase;
+            margin: 3px;
+            padding: 3px;
+        }
+        .data-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .item-container {
+                width: 72px;
+                height: 72px;
+                border-radius: 3px;
+                margin: 5px;
+                padding: 5px;
+                background-color: rgba(0, 0, 0, 0.25);
+                cursor: default;
+            }
+            .item-container__empty{
+                width: 72px;
+                height: 72px;
+                border-radius: 3px;
+                margin: 5px;
+                padding: 5px;
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+        }
+        
+    }
+}
+.descriptionMain{
+    position: absolute;
+    left: 58vh;
+    top: 3.9vh;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    margin: 20px;
+    width: 300px;
+    min-height: 150px;
+    .title-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .text {
+            text-transform: uppercase;
+            text-decoration: underline;
+            margin: 10px;
+            flex-grow: 3;
+        }
+        .image{
+            flex-grow: 1;
+        }
+    }
+    
+    .description{
+        margin-top: 15px;
+        margin-left: 5px;
+    }
+    .hr{
+        //Сверху | справа | снизу | слева
+        /*margin-top: 20px ;
+        padding: 0;
+        height: 0;
+        border: 3px;*/
+        border-top: 1px solid #333;
+        color: white;
+    }
+}
+
+.countBox {
+    position: absolute;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 250px;
+    height: 150px;
+    left: 37%;
+    top:35vh;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    .title-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        .countBox__title {
+            text-align: center;
+        }
+        .countBox__img {
+            margin-top: 10px;
+        }
+    }
+}
+
+.countBox__interact {
+    margin: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.countBox__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.countBox__buttons-btn {
+    
+    width: 90px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3px;
+    cursor: default;
+}
+.countBox__buttons-btn:hover{
+    transform: scale(1.1);
+}
+
+#identity{
+    //position: relative;
+}
+.identity-main-container {
+    position: absolute;
+    z-index: 999;
+    //border: 1px solid black;
+    /*width: 800px;*/
+    
+    top: 15vh;
+    left: 9%;
+    display: flex;
+    flex-direction: row;
+    .context-container {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        border-radius: 5px;
+        .title-container {
+            text-transform: uppercase;
+            padding: 10px;
+        }
+        .context-main {
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+
+            .context-item {
+                padding: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                .context-item__height{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .btns-container {
+            display: flex;
+            flex-direction: row;
+            .btn-item {
+                width: 50%;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 3px;
+                /*background-color: aqua;*/
+                text-align: center;
+            }
+            .btn-item:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .cards-container{
+        /*border: 1px solid black;*/
+        width: 100%;
+        height: 415px;
+        margin-left: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .cards {
+            .cards-item{
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border-radius: 5px;
+                //height: 100px;
+                margin: 10px;
+                padding: 10px;
+                cursor: default;
+               
+                .title {
+                    text-decoration: underline;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+                .descriptions {
+                    .description {
+                        margin: 5px;
+                    }
+                }
+            }
+            .cards-item:hover {
+                transform: scale(1.05);
+            }
+        } 
+        .cardSelected {
+            border: 3px green solid;
+        } 
+         
+    }
+}
+
+.interract_container{
+    position: absolute;
+    top: 70vh;
+    left: 2vh;
+    //height: 50px;
+    background: linear-gradient(to bottom right, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 5%));
+
+    color: white;
+    padding: 5px;
+    width: 250px;
+    text-align: left;
+    animation: aniNotif 1s forwards;
+}
+@keyframes aniNotif {
+	0% {transform: translateX(-150%); opacity: 0%;}
+    100% {transform: translateX(0%); opacity: 100%;}
+  }
+
+
+
+
+

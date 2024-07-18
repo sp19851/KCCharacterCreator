@@ -1,0 +1,271 @@
+#menu{
+    /*font-family: rdr_title;*/
+   
+}
+.menu__main-container {
+    /* цветовая для создания персонажа*/
+    --haracter-creator__main-container--background-color: rgba(0, 0, 0, 25%);
+    --haracter-creator__main-container--color: white;
+    --menu__items-container__item--border-color: rgba(0, 0, 0, 50%);
+    --menu__items-container__item--background-color: rgba(0, 0, 0, 50%);
+    --menu__buttons-container__item--background-color: rgba(240, 233, 233, 0.966); 
+    background-color: var(--haracter-creator__main-container--background-color);
+    
+    
+    
+}
+
+.menu__title {
+    position: absolute;
+    left: 3%;
+    top:50px;
+    width: 30%;
+    font-size: 38px;
+    background: linear-gradient(to bottom right, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 5%));
+    color: var(--haracter-creator__main-container--color);
+}
+
+.menu__title__text {
+    padding-left: 5px;
+}
+
+.menu__items-container {
+    position: absolute;
+    left: 3%;
+    top:110px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    /*background-color: var(--haracter-creator__main-container--background-color);*/
+    color: var(--haracter-creator__main-container--color);
+    
+    height: 650px;
+    overflow-y: auto;
+}
+
+.menu__items-container::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--haracter-creator__main-container--background-color);
+}
+.menu__items-container::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+
+.menu__items-container__title {
+    font-size: 48px;
+    background: linear-gradient(to bottom right, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 5%));
+    
+}
+
+.menu__items-container__title__text {
+    padding-left: 5px;
+}
+
+hr {
+    color: var(--haracter-creator__main-container--color);
+    /* Устанавливаем цвет линии */
+    background-color: var(--haracter-creator__main-container--color);
+    /* Для кроссбраузерности (Opera и Mozilla Firefox) */
+    height: 5px;
+    /* Задаем толщину */
+    border: none;
+    /* Отменяем отображение границы (в браузере Firefox) */
+}
+
+h3 {
+    font-size: 16px;
+}
+
+/*.menu__items-container__body{
+    height: 650px;
+    overflow-y: auto;
+}
+.menu__items-container__body::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--haracter-creator__main-container--background-color);
+}
+.menu__items-container__body::-webkit-scrollbar-thumb {
+    background-color: #223c50;
+}
+*/
+
+.menu__items-container__item,
+.menu__items-container__product-item,
+.menu__items-container__vehicle-item,
+.menu__items-container__list-item,
+.menu__items-container__textbox_item,
+.menu__items-container__slider_item,
+.menu__items-container__slider_selector_item {
+    margin: 5px;
+    padding: 5px;
+    border: 1px var(--menu__items-container__item--border-color) solid;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px var(--menu__items-container__item--border-color);
+    font-size: 32px;
+    background: linear-gradient(to bottom right, var(--menu__items-container__item--background-color), rgba(0, 0, 0, 5%));
+    cursor: default;
+}
+
+.verticalLine {
+    border-left: thick solid var(--haracter-creator__main-container--color);
+}
+
+.menu__items-container__item:hover,
+.menu__items-container__product-item:hover,
+.menu__items-container__vehicle-item:hover,
+.menu__items-container__list-item:hover,
+.menu__items-container__textbox_item:hover,
+.menu__items-container__slider_item:hover,
+.menu__items-container__slider_selector_item:hover {
+    transform: scale(102%);
+    box-shadow: 5px 5px 5px var(--menu__items-container__item--border-color);
+}
+
+.menu__items-container__list-item__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+
+
+
+.menu__items-container__textbox_item,
+.menu__items-container__slider_item,
+.menu__items-container__slider_selector_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu__items-container__slider_item__container,
+.menu__items-container__slider_selector_item__container {
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.slider-list-content__value{
+    /*position: absolute;*/
+    font-size: 16px;
+    margin-left: 50%;
+    margin-top: -3px;
+}
+
+.menu__input {
+    width: 220px;
+    text-align: end;
+    margin-right: 10px;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+.menu__items-container__list-item__container__img{
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    background-size: cover;
+    filter: invert(100%);
+    
+}
+
+.menu__items-container__list-item__container__items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 35%;
+}
+.menu__items-container__list-item__container__items:hover {
+    transform: scale(1.1);
+}
+
+.menu__buttons-container {
+    /*border: 1px black solid;*/
+
+    position: absolute;
+    top:800px;
+    left:3%;
+    width: 30%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu__buttons-container__item{
+    /*background: linear-gradient(to bottom right, var(--menu__buttons-container__item--background-color), rgba(0, 0, 0, 5%));*/
+    background-color: var(--menu__buttons-container__item--background-color);
+    width: 18%;
+    cursor: default;
+    text-align: center;
+    color: var(--haracter-creator__main-container--color);
+}
+.menu__buttons-container__item:hover{
+    transform: scale(1.1);
+}
+
+
+.menu__items-container__product-item__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.product-item__bottoncontainer {
+    display: flex;
+    font-size: 28px;
+    justify-content: space-between;
+}
+.product-item__plate {
+    
+    color: green;
+}
+.product-item__remains {
+
+}
+.menu__items-container__vehicle-item__container
+ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    
+}
+.vehicle-item__container-top,
+.vehicle-item__container-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+.body-item{
+    font-size: 16px;
+    padding: 5px;
+}
+.menu__items-container__vehicle-item__container h3{
+    font-size: 20px;
+}
+.vehicle-item__bottoncontainer{
+    font-size: 16px;
+   
+}
+.vehicle-item__plate-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.vehicle-item__params  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.vehicle-item__params div {
+   
+    
+}
