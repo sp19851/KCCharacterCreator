@@ -42,6 +42,8 @@ namespace KCCC.Client
             public const string Save = "CharacterCreater.Save";
 
             public const string IdentityCreate = "Identity.Create";
+            public const string IdentityCancel = "Identity.Cancel";
+            
             public const string TickReset = "CharacterCreater.TickReset";
 
 
@@ -50,6 +52,7 @@ namespace KCCC.Client
         {
             public const string OnSetCitizenIdBankAccount = "Character.OnSetCitizenIdBankAccount";
             public const string OnSave = "Character.OnSave";
+            public const string OnGetDataFromCreator = "Character.OnGetDataFromCreator";
         }
         public class Banking
         {

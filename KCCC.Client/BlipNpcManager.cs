@@ -72,28 +72,34 @@ namespace KCCC.Client
             npcs.Add(npc);
            
         }
+        public static void Delete()
+        {
+            for (int i = 0; i < Blips.Count; i++)
+            {
+                var blip = Blips.ElementAt(i);
+                var handle = blip.Value.Handle;
+                API.RemoveBlip(ref handle);
+            }
+
+            for (int i = 0; i < npcs.Count; i++)
+            {
+                var npc = npcs[i];
+                var handle = npc.Handle;
+                API.DeleteEntity(ref handle);
+            }
+            Blips.Clear();
+            npcs.Clear();
+        }
 
         [EventHandler("onResourceStop")]
         private static void OnResourceStop(string resourceName)
         {
             if (resourceName == "KCCharacterCreator")
             {
-                for (int i = 0; i < Blips.Count; i++)
-                {
-                    var blip = Blips.ElementAt(i);
-                    var handle = blip.Value.Handle;
-                    API.RemoveBlip(ref handle);
-                }
-
-                for (int i = 0; i < npcs.Count; i++)
-                {
-                    var npc = npcs[i];
-                    var handle = npc.Handle;
-                    API.DeleteEntity(ref handle);
-                }
-                Blips.Clear();
-                npcs.Clear();
+                Delete();
             }
         }
+
+        
     }
 }

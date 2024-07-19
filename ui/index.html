@@ -1242,7 +1242,77 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div> 
+    <div id="identity">
+        <div class="identity-main-container" v-show="identityShow">
+            <div class="context-container">
+                <div class="title-container">
+                    Создание личности
+                </div>
+                <div class="context-main">
+                    <div class="context-item">
+                        Имя
+                        <input type="text" @change="SetFirstName($event.target.value)">
+                    </div>
+                    <div class="context-item">
+                        Фамилия
+                        <input type="text" @change="SetLastName($event.target.value)">
+                    </div>
+                    <div class="context-item">
+                        Пол
+                       <select name="sex" id="sex" @change="SetSex($event.target.value)">
+                        <option value="male">Муж</option>
+                        <option value="famele">Жен</option>
+                        </select>
+                    </div>
+                    <div class="context-item">
+                        Дата рождения
+                        <input type="date" @change="SetDob($event.target.value)">
+                    </div>
+                    <div class="context-item">
+                        Место рождения
+                        <input type="text" @change="SetPlaceB($event.target.value)">
+                    </div>
+                    <div class="context-item" @change="SetNat($event.target.value)">
+                        Национальность
+                        <input type="text">
+                    </div>
+                    <div class="context-item">
+                        Рост 
+                        <div class="context-item__height">
+                            {{hight}} cм
+                            <input type="range" min="150" max="210" step="10" style="align-self:normal"  :value="hight" @change="SetHight($event.target.value)">
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="btns-container">
+                    <div class="btn-item" style="background-color: blue;" @click=OkBtn()>
+                        Принять
+                    </div>
+                    <div class="btn-item" style="background-color: red;" @click=CancelBtn()>
+                        Отмена
+                    </div>
+                </div>
+            </div>
+            <div class="cards-container">
+                <div class="cards" v-for="card in cards" :id="card.Id">
+                    <div class="cards-item" :class="{cardSelected: checkCardSelected(card)}" @click="onCardSelect(card)">
+                        <div class="title">
+                            {{card.Title}}
+                        </div>
+                        <div class="descriptions" v-for="text in card.Descriptions">
+                            <div class="description">
+                                {{text.Id}}. {{text.Text}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
 </body>
 <script src="./scripts/characterCreate.js"></script>
+<script src="./scripts/identity.js"></script>
 </html>

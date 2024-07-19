@@ -82,6 +82,7 @@ namespace KCCC.Client
                 var data = JsonConvert.DeserializeObject<Character>(json);
                 if (data != null)
                 {
+                    characterData = data;
                     TriggerEvent("Notification.AddAdvanceNotif", "ПЕРСОНАЖ", "", 10500, "Вы не закончили создание персонажа", "red", "Warning");
                     
                 }
@@ -247,15 +248,22 @@ namespace KCCC.Client
                 
             }
             //await SetDefaultPed();
-            //TickReset();
+            TickReset();
             
-            Tick += Update;
-            Tick += UpdateInteract;
-            Tick += UpdateControl;
+            //Tick += Update;
+            //Tick += UpdateInteract;
+            //Tick += UpdateControl;
 
             IsReady = true;
             
 
+        }
+        private async Task Deinitialization()
+        {
+            Tick -= Update;
+            Tick -= UpdateInteract;
+            Tick -= UpdateControl;
+            BlipNpcManager.Delete();
         }
         #region Tick
 
@@ -879,6 +887,10 @@ namespace KCCC.Client
                 TickReset();
                 return;
             }
+
+            //отправляем сигнал ядру о том, что скрипт закончил работу
+            TriggerEvent(Events.Character.OnGetDataFromCreator);
+
             //пометка в базу
 
             //characterData.DoneCreated = true;
@@ -903,8 +915,10 @@ namespace KCCC.Client
 
             //characterManager.LastInit(characterData);
 
-
+            await Deinitialization();
         }
+
+       
 
         #endregion
 
@@ -1280,9 +1294,18 @@ namespace KCCC.Client
             NUI.RegisterNUICallback(Events.CharacterCreater.Save, Save);
 
             NUI.RegisterNUICallback(Events.CharacterCreater.IdentityCreate, IdentityCreate);
+            NUI.RegisterNUICallback(Events.CharacterCreater.IdentityCancel, IdentityCancel);
 
 
 
+        }
+
+        private CallbackDelegate IdentityCancel(IDictionary<string, object> data, CallbackDelegate result)
+        {
+            NUI.Execute(new { request = "characterCreate.hide" });
+            NUI.Focus(false, false);
+            result("ok");
+            return result;
         }
 
         private CallbackDelegate IdentityCreate(IDictionary<string, object> data, CallbackDelegate result)
@@ -1827,13 +1850,15 @@ namespace KCCC.Client
         {
 
             CanInterract = true;
-            
+            Tick += Update;
+            Tick += UpdateInteract;
+            Tick += UpdateControl;
         }
 
         [EventHandler(Events.Character.OnSetCitizenIdBankAccount)]
         private async void OnSetCitizenIdBankAccount(string citizenId, string bankaccount, string json = "")
         {
-            Debug.WriteLine("OnSetCitizenIdBankAccount");
+            Debug.WriteLine($"OnSetCitizenIdBankAccount {json}");
             BankAccount = bankaccount;
             CitizenId = citizenId;
             await Init(json);
@@ -1842,14 +1867,6 @@ namespace KCCC.Client
 
         #endregion
 
-        [Command("kccc")]
-        private async void KCCC(int source, List<object> args, string raw)
-        {
-            //BankAccount = "bankaccount";
-            //CitizenId = "citizenId";
-            //await Init("json");
-            Debug.WriteLine(JsonConvert.SerializeObject(characterData));
-
-        }
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using CitizenFX.Core.Native;
+﻿using CitizenFX.Core;
+using CitizenFX.Core.Native;
 using Core.Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace KCCC.Client
             var _cam = new CameraModel(name, newpos, action);
             _cam.Handle = cam;
             _cam.Scene = scene;
-            await Delay(0);
+            
             cams.Add(_cam);
             return _cam;
         }
@@ -42,17 +43,14 @@ namespace KCCC.Client
             if (cam == -1) return null;
             _cam.Handle = cam;
             _cam.Scene = scene;
-            await Delay(0);
+            
 
             cams.Add(_cam);
 
             return _cam;
         }
 
-        private static async Task Delay(int v)
-        {
-            await Task.Delay(v);
-        }
+       
 
         public static Task DeleteScene(string sceneName)
         {
